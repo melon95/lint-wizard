@@ -1,49 +1,36 @@
-# Athena
+# lint-wizard
 
-Athena is a frontend code style tools(fcsl)
-备用名是：Metis
+lint-wizard is a frontend code style tools
 
-1. 询问基本信息
-1. 技术栈（React\Vue）
-1. 是否使用 TypeScript
-1. 使用的包管理工具
-1. 询问项目类型：前端项目、Node 项目
+## Idea
 
-1. 询问 Eslint 的喜好(eslint --init 的所有选项)
-1. Airbnb
-1. Standard
-1. 不使用 Eslint
+就这几年来前端发展很快，越来越多的新东西都出来了，随之而来时前端的复杂度也大大提升了。
 
-1. 询问 Prettier 的喜好
-1. 按照 Eslint 的规范来选择
-1. 如果同时选择了 Eslint 和 Prettier，还需要在 Eslint 添加 prettier 插件，防止冲突
+现在如果从头开始搭建一个前端工程，等到搭建完成估计一天就过去了。这其中很多时间都花在了技术选型和工具配置上面。
 
-1. 根据项目类型来决定是否询问用户的 Stylelint 的喜好
+<aside>
+💡 当然你也可以通过官方脚手架和其他工具提供的脚手架来快速搭建，例如：create-react-app、create-next-app等。这样会节约部分时间。
 
-1. 询问是否需要 husky 和 lint-stage 工具
+</aside>
 
-1. 询问是否需要 Commit 提交规范
+因此就像写一个配置工具，来简化大部分的非核心配置：ESLint、Prettier、StyleLint、CommitLint、husky、lint-stage等。
 
-1. 询问是否需要 editorconfig 和编辑器的工作区设置
+## 开发思路
 
-1. 根据用户的回答开始安装依赖生成配置文件
+1. 参考 `@eslint/config` 设计问题，一步步的收集用户的需求，例如：框架、代码风格、是否使用TypeScript、包管理工具、配置文件后缀名等
+2. 根据框架、代码风格、是否使用 TypeScript 来决定采取不同的模板的配置
 
+## 依赖项
 
+- commander
+- inquirer
+- chalk
+- ora
+- configstore
+- download-git-repo
 
+## 里程碑
 
-1. What type of modules does your project use?
- - JavaScript modules (import/export)
- - CommonJS (require/exports)
+### v1
 
-2. Which framework does your project use?
-  - React
-  - Vue
-3. Does your project use TypeScript?
-
-4. Where does your code run?
-  - Browser
-  - Node
-
-5. Which style guide do you want to follow?
-  - XO: https://github.com/xojs/eslint-config-xo-typescript
-  - Standard: https://github.com/standard/eslint-config-standard-with-typescript
+- [ ]  根据需求自动生成 ESLint、Prettier、StyleLint配置

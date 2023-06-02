@@ -1,6 +1,6 @@
 {
-  "name": "athena",
-  "version": "1.0.0",
+  "name": "lint-wizard",
+  "version": "0.0.1",
   "description": "",
   "type": "module",
   "main": "index.js",
